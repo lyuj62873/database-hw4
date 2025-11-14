@@ -10,11 +10,6 @@
     "module": "CommonJS",
     "target": "ES2020",
     "moduleResolution": "node",
-    // "types": [],
-    // For nodejs:
-    // "lib": ["esnext"],
-    // "types": ["node"],
-    // and npm install -D @types/node
 
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
@@ -36,13 +31,6 @@
     "noUncheckedIndexedAccess": true,
     "exactOptionalPropertyTypes": true,
 
-    // Style Options
-    // "noImplicitReturns": true,
-    // "noImplicitOverride": true,
-    // "noUnusedLocals": true,
-    // "noUnusedParameters": true,
-    // "noFallthroughCasesInSwitch": true,
-    // "noPropertyAccessFromIndexSignature": true,
 
     "forceConsistentCasingInFileNames": true
 

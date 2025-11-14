@@ -11,9 +11,11 @@ import {FactPayment} from "../entities/target/FactPayment";
 import {FactRental} from "../entities/target/FactRental";
 import {SyncState} from "../entities/target/SyncState";
 
+import "dotenv/config";
+
 export const SQLiteTarget = new DataSource({
     type: "sqlite",
-    database: "./analytics.sqlite",
+    database: process.env.SQLITE_DB!,
     entities: [BridgeFilmActor, BridgeFilmCategory, DimActor, DimCategory, DimCustomer, DimDate, DimFilm, DimStore, FactPayment, FactRental, SyncState],
     synchronize: true,
 });

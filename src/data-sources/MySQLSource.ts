@@ -15,12 +15,14 @@ import {Staff} from "../entities/source/Staff";
 import {Store} from "../entities/source/Store";
 import {FilmCategory} from "../entities/source/FilmCategory";
 
+import "dotenv/config";
+
 export const MySQLSource = new DataSource({
     type: "mysql",
-    host: "localhost",
-    port: 3306,
-    username: "root",
-    password: "abc123",
+    host: process.env.MYSQL_HOST!,
+    port: Number(process.env.MYSQL_PORT!),
+    username: process.env.MYSQL_USER!,
+    password: process.env.MYSQL_PASSWORD!,
     database: "sakila",
     entities: [Actor, Address, Category, City, Country, Customer, Film, FilmActor, Inventory, Language, Payment, Rental, Staff, Store, FilmCategory],
     synchronize: false,
