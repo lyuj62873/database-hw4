@@ -1,8 +1,8 @@
-import { MySQLSource } from "../../../data-sources/MySQLSource";
-import { SQLiteTarget } from "../../../data-sources/SQLiteTarget";
-import { Rental } from "../../../entities/source/Rental";
-import { FactRental } from "../../../entities/target/FactRental";
-import { EntityManager } from "typeorm";
+import {MySQLSource} from "../../../data-sources/MySQLSource";
+import {SQLiteTarget} from "../../../data-sources/SQLiteTarget";
+import {Rental} from "../../../entities/source/Rental";
+import {FactRental} from "../../../entities/target/FactRental";
+import {EntityManager} from "typeorm";
 
 function getDateKey(date: Date): number {
     const year = date.getFullYear();

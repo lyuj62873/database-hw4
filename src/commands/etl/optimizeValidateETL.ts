@@ -90,7 +90,6 @@ async function validateFactRental() {
         };
 
         for (const key of Object.keys(expected)) {
-            // @ts-ignore
             if (tgt[key] !== expected[key]) {
                 discrepancies.push(`Mismatch rental_id=${src.rental_id}, field=${key}, target=${tgt[key]}, source=${expected[key]}`);
             }

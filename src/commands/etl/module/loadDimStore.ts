@@ -1,7 +1,7 @@
-import { MySQLSource } from "../../../data-sources/MySQLSource";
-import { Store } from "../../../entities/source/Store";
-import { DimStore } from "../../../entities/target/DimStore";
-import { EntityManager } from "typeorm";
+import {MySQLSource} from "../../../data-sources/MySQLSource";
+import {Store} from "../../../entities/source/Store";
+import {DimStore} from "../../../entities/target/DimStore";
+import {EntityManager} from "typeorm";
 
 export async function loadDimStore(manager?: EntityManager) {
     const storeRepo = MySQLSource.getRepository(Store);
@@ -10,7 +10,7 @@ export async function loadDimStore(manager?: EntityManager) {
         ? manager.getRepository(DimStore)
         : (await import("../../../data-sources/SQLiteTarget")).SQLiteTarget.getRepository(DimStore);
 
-    const stores = await storeRepo.find({ relations: ["address", "address.city", "address.city.country"] });
+    const stores = await storeRepo.find({relations: ["address", "address.city", "address.city.country"]});
 
     const offset = 1000;
 

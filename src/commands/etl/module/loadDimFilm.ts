@@ -1,7 +1,7 @@
-import { MySQLSource } from "../../../data-sources/MySQLSource";
-import { DimFilm } from "../../../entities/target/DimFilm";
-import { Film } from "../../../entities/source/Film";
-import { EntityManager } from "typeorm";
+import {MySQLSource} from "../../../data-sources/MySQLSource";
+import {DimFilm} from "../../../entities/target/DimFilm";
+import {Film} from "../../../entities/source/Film";
+import {EntityManager} from "typeorm";
 
 export async function loadDimFilm(manager?: EntityManager) {
     const filmRepo = MySQLSource.getRepository(Film);
@@ -10,7 +10,7 @@ export async function loadDimFilm(manager?: EntityManager) {
         ? manager.getRepository(DimFilm)
         : (await import("../../../data-sources/SQLiteTarget")).SQLiteTarget.getRepository(DimFilm);
 
-    const films = await filmRepo.find({ relations: ["language"] });
+    const films = await filmRepo.find({relations: ["language"]});
 
     let offset = 10000;
 

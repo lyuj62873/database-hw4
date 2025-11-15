@@ -1,7 +1,7 @@
-import { MySQLSource } from "../../../data-sources/MySQLSource";
-import { DimActor } from "../../../entities/target/DimActor";
-import { Actor } from "../../../entities/source/Actor";
-import { EntityManager } from "typeorm";
+import {MySQLSource} from "../../../data-sources/MySQLSource";
+import {DimActor} from "../../../entities/target/DimActor";
+import {Actor} from "../../../entities/source/Actor";
+import {EntityManager} from "typeorm";
 
 export async function loadDimActor(manager?: EntityManager) {
     const actorRepo = MySQLSource.getRepository(Actor);

@@ -1,8 +1,8 @@
-import { MySQLSource } from "../../../data-sources/MySQLSource";
-import { DimDate } from "../../../entities/target/DimDate";
-import { Rental } from "../../../entities/source/Rental";
-import { Payment } from "../../../entities/source/Payment";
-import { EntityManager } from "typeorm";
+import {MySQLSource} from "../../../data-sources/MySQLSource";
+import {DimDate} from "../../../entities/target/DimDate";
+import {Rental} from "../../../entities/source/Rental";
+import {Payment} from "../../../entities/source/Payment";
+import {EntityManager} from "typeorm";
 
 function getDateKey(date: Date): string {
     const year = date.getFullYear();
@@ -24,8 +24,8 @@ export async function loadDimDate(manager?: EntityManager) {
         ? manager.getRepository(DimDate)
         : (await import("../../../data-sources/SQLiteTarget")).SQLiteTarget.getRepository(DimDate);
 
-    const rentals = await rentalRepo.find({ select: ["rental_date", "return_date"] });
-    const payments = await paymentRepo.find({ select: ["payment_date"] });
+    const rentals = await rentalRepo.find({select: ["rental_date", "return_date"]});
+    const payments = await paymentRepo.find({select: ["payment_date"]});
 
     const dates = new Set<string>();
 

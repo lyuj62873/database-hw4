@@ -1,7 +1,7 @@
-import { MySQLSource } from "../../../data-sources/MySQLSource";
-import { DimCategory } from "../../../entities/target/DimCategory";
-import { Category } from "../../../entities/source/Category";
-import { EntityManager } from "typeorm";
+import {MySQLSource} from "../../../data-sources/MySQLSource";
+import {DimCategory} from "../../../entities/target/DimCategory";
+import {Category} from "../../../entities/source/Category";
+import {EntityManager} from "typeorm";
 
 export async function loadDimCategory(manager?: EntityManager) {
     const categoryRepo = MySQLSource.getRepository(Category);

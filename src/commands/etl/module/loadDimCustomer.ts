@@ -1,7 +1,7 @@
-import { MySQLSource } from "../../../data-sources/MySQLSource";
-import { Customer } from "../../../entities/source/Customer";
-import { DimCustomer } from "../../../entities/target/DimCustomer";
-import { EntityManager } from "typeorm";
+import {MySQLSource} from "../../../data-sources/MySQLSource";
+import {Customer} from "../../../entities/source/Customer";
+import {DimCustomer} from "../../../entities/target/DimCustomer";
+import {EntityManager} from "typeorm";
 
 export async function loadDimCustomer(manager?: EntityManager) {
     const customerRepo = MySQLSource.getRepository(Customer);

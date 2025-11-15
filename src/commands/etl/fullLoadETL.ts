@@ -51,7 +51,6 @@ export async function fullLoadETL() {
         })
 
 
-
         console.log("ETL process completed successfully.");
         if (SQLiteTarget.isInitialized) await SQLiteTarget.destroy();
         if (MySQLSource.isInitialized) await MySQLSource.destroy();

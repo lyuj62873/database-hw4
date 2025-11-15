@@ -21,6 +21,8 @@ export class Address {
     postal_code?: string;
     @Column({type: "varchar", length: 20})
     phone!: string;
+    // It should be Geometry in Mysql, but it will cause a weird bug, so I treat it as a string.
+    // After all, no table in SQLite needs this column.
     @Column({type: "text"})
     location!: string;
     @Column({type: "timestamp", default: "CURRENT_TIMESTAMP", onUpdate: "CURRENT_TIMESTAMP"})

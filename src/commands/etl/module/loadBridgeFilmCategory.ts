@@ -1,10 +1,10 @@
-import { MySQLSource } from "../../../data-sources/MySQLSource";
-import { SQLiteTarget } from "../../../data-sources/SQLiteTarget";
-import { DimFilm } from "../../../entities/target/DimFilm";
-import { DimCategory } from "../../../entities/target/DimCategory";
-import { BridgeFilmCategory } from "../../../entities/target/BridgeFilmCategory";
-import { FilmCategory } from "../../../entities/source/FilmCategory";
-import { EntityManager } from "typeorm";
+import {MySQLSource} from "../../../data-sources/MySQLSource";
+import {SQLiteTarget} from "../../../data-sources/SQLiteTarget";
+import {DimFilm} from "../../../entities/target/DimFilm";
+import {DimCategory} from "../../../entities/target/DimCategory";
+import {BridgeFilmCategory} from "../../../entities/target/BridgeFilmCategory";
+import {FilmCategory} from "../../../entities/source/FilmCategory";
+import {EntityManager} from "typeorm";
 
 export async function loadBridgeFilmCategory(manager?: EntityManager) {
     const filmCategoryRepo = MySQLSource.getRepository(FilmCategory);
